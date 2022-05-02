@@ -9,7 +9,7 @@ pipeline {
     stages{
         stage('Build'){
             steps{
-                 sh script: 'mvn clean -Dmaven.test.skip=true package'
+                 sh script: 'mvn package -Dmaven.test.skip'
                  archiveArtifacts artifacts: 'target/*.war', onlyIfSuccessful: true
             }
         }
